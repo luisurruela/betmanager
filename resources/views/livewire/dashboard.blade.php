@@ -10,6 +10,7 @@
             </div>
         </div>
     </div>
-</div>
 
-@include('livewire.modals')
+    @include('livewire.modals')
+
+</div>

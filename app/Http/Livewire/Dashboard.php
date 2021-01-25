@@ -6,7 +6,12 @@ use Livewire\Component;
 
 class Dashboard extends Component
 {
-    public $showCreateModal = false;
+    public $createFormModal = false;
+    public $match = '';
+    public $market = '';
+    public $odds = '';
+    public $amount = 0;
+    public $type = 'Derecha';
 
     public function render()
     {
@@ -15,6 +20,6 @@ class Dashboard extends Component
 
     public function create()
     {
-        $this->showCreateModal = true;
+        $this->createFormModal = true;
     }
 }
