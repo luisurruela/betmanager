@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use App\Models\Bets;
 
 class Dashboard extends Component
 {
@@ -21,5 +22,27 @@ class Dashboard extends Component
     public function create()
     {
         $this->createFormModal = true;
+    }
+
+    public function mount()
+    {
+
+    }
+    
+    /**
+     * Save new bet in database
+     *
+     * @return void
+     */
+    public function store()
+    {
+        Bets::create([
+            'user_id'       => auth()->user()->id,
+            'match'         => $this->match,
+            'market'        => $this->market,
+            'odds'          => $this->odds,
+            'type'          => $this->type,
+            'amount'        => $this->amount
+        ]);
     }
 }
